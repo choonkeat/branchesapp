@@ -1,0 +1,40 @@
+body { font-family: Menlo, Consolas, monospace; font-size: 90%; }
+ul { list-style: none; padding-left: 1em; cursor: pointer; }
+li { border-left: 1px dotted #eee; padding-left: 1.5em; }
+li:hover { border-left: 1px solid #ccc; }
+h2 sup { font-weight: normal; font-size: 12px; margin-left: 1.5em; }
+
+li p { background-color: #eee; padding: 0.5em; }
+.branch-name { font-size: 1.2em; }
+.link { text-decoration: underline; cursor: pointer; }
+.changes { background: white; width: 600px; height: 0; overflow-y: hidden; }
+.changes.verbose { height: auto; }
+.changes .message { white-space: pre-line; }
+.changes .author { display: block; font-size: 0.8em; color: #555; margin-top: 0.5em; text-align: right; }
+span.names { text-overflow: ellipsis; white-space: nowrap; width: 500px; display: inline-block; overflow: hidden; height: 1.5em; }
+span.names.verbose { overflow: visible; font-weight: bold; width: auto; background-color: lightBlue; }
+li.head > span.names, span.names:hover { font-weight: bold; background-color: lightBlue; }
+
+body.upstream li.irrelevant { display: none; }
+body.upstream ul.past, body.upstream li.past, body.upstream li.past:hover { padding-left: 0; border-left: 0; }
+body.upstream li.past > .names { height: 0; }
+body.upstream li.past > .changes.verbose { height: 0; }
+
+body.upstream .hide-past, body:not(.verbose) .hide-all { text-decoration: none; }
+body:not(.upstream) .show-past, body.verbose .show-all { text-decoration: none; }
+
+ul, li {
+  -webkit-transition: padding-left 0.1s ease-in-out;
+  -moz-transition: padding-left 0.1s ease-in-out;
+  transition: padding-left 0.1s ease-in-out;
+}
+.names {
+  -webkit-transition: height 0.1s ease-in-out;
+  -moz-transition: height 0.1s ease-in-out;
+  transition: height 0.1s ease-in-out;
+}
+.changes { background: white; width: 600px; height: 0; overflow-y: hidden;
+  -webkit-transition: height 0.3s ease-in-out;
+  -moz-transition: height 0.3s ease-in-out;
+  transition: height 0.3s ease-in-out;
+}

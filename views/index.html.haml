@@ -1,0 +1,33 @@
+!!!
+%html{:lang => "en", :'xmlns:og' => "http://ogp.me/ns#"}
+  %head
+    %link{href: "../../gritnet.css", media: "screen", rel: "stylesheet", type: "text/css"}
+    %script{src: "http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js", type: "text/javascript"}
+    %script{src: "../../gritnet.js", type: "text/javascript"}
+  %body
+    %h1
+      See git(hub) forks clearly
+    %h2
+      %a{href: "https://github.com/#{github_path}", target: "_blank"}
+        = github_path
+    %h3 HTML
+    %p
+      /
+      %span.link.show-past show
+      |
+      %span.link.hide-past hide
+      the past
+      %br
+      %span.link.show-all show
+      |
+      %span.link.hide-all hide
+      all commit messages
+    %ul
+      = tree.to_html
+    / %h3 JSON
+    / %pre.code
+    / %script{src: "http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js", type: "text/javascript"}
+    / :javascript
+    /   (function(json) {
+    /     $('pre.code').text( JSON.stringify(json, null, 2) );
+    /   })(#{tree.to_json_string});

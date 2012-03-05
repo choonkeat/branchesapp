@@ -1,0 +1,18 @@
+!!!
+%html{:lang => "en", :'xmlns:og' => "http://ogp.me/ns#"}
+  %head
+    %meta{:"http-equiv" => "Refresh", content: "3;"}
+    %link{href: "../../gritnet.css", media: "screen", rel: "stylesheet", type: "text/css"}
+    %script{src: "http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js", type: "text/javascript"}
+    %script{src: "../../gritnet.js", type: "text/javascript"}
+  %body
+    %h1
+      See git(hub) forks clearly
+    %h2
+      %a{href: "https://github.com/#{github_path}", target: "_blank"}
+        = github_path
+    %h3
+      Processing...
+      %img{src: "../../loading.gif"}
+    %p
+      Contemplate on the virtues of patience. This could take a few minutes if the repository has a few thousand forks.
