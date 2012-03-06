@@ -1,8 +1,7 @@
 body { font-family: Menlo, Consolas, monospace; font-size: 90%; }
-ul { list-style: none; padding-left: 1em; cursor: pointer; }
-li { border-left: 1px dotted #eee; padding-left: 1.5em; }
+ul { list-style: none; padding-left: 1.5em; cursor: pointer; }
+li { border-left: 1px dotted #eee; padding-left: 0; }
 li:hover { border-left: 1px solid #ccc; }
-h2 sup { font-weight: normal; font-size: 12px; margin-left: 1.5em; }
 
 li p { background-color: #eee; padding: 0.5em; }
 .branch-name { font-size: 1.2em; }
@@ -11,6 +10,8 @@ li p { background-color: #eee; padding: 0.5em; }
 .changes.verbose { height: auto; }
 .changes .message { white-space: pre-line; }
 .changes .author { display: block; font-size: 0.8em; color: #555; margin-top: 0.5em; text-align: right; }
+span.names:before { content: "[+]"; }
+span.names.verbose:before { content: "[-]"; }
 span.names { text-overflow: ellipsis; white-space: nowrap; width: 500px; display: inline-block; overflow: hidden; height: 1.5em; }
 span.names.verbose { overflow: visible; font-weight: bold; width: auto; background-color: lightBlue; }
 li.head > span.names, span.names:hover { font-weight: bold; background-color: lightBlue; }
