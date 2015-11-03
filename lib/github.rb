@@ -21,8 +21,10 @@ module Github
         puts uri.inspect
         res = Net::HTTP.start(uri.host, uri.port, use_ssl: uri.scheme == 'https') do |http|
           req = Net::HTTP::Get.new(uri.request_uri)
+          req.basic_auth ENV['HTTP_USER'], ENV['HTTP_PASSWORD'] if ENV['HTTP_USER'] && ENV['HTTP_PASSWORD']
           http.request(req)
         end
+        puts "RateLimit: #{res['X-RateLimit-Remaining']} / #{res['X-RateLimit-Limit']}"
         raise res.inspect + res.body unless res.code =~ /^2\d\d/
         @forks ||= []
         @forks += JSON.parse(res.body)

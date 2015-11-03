@@ -13,7 +13,17 @@ ruby g2h.rb [url of github project]
 e.g.
 
 ```
-  ruby g2h.rb https://github.com/jney/jquery.pageless
+ruby g2h.rb https://github.com/jney/jquery.pageless
+```
+
+### rate limit
+
+[To have a higher rate limit](https://github.com/choonkeat/branchesapp/issues/2), you can have `g2h.rb` make authenticated API calls by setting the `HTTP_USER` environment variable to your github username and `HTTP_PASSWORD` environment variable to a personal access tokens, OAuth token or your password
+
+e.g.
+
+```
+HTTP_USER=choonkeat HTTP_PASSWORD=topsecret ruby g2h.rb https://github.com/jney/jquery.pageless
 ```
 
 # author
